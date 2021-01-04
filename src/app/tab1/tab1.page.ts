@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private socialSharing: SocialSharing) {}
 
+  onClick(){
+    this.socialSharing.share('The message you would like to share');
+  }
 }

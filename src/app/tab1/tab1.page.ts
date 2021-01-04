@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -8,9 +8,15 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 })
 export class Tab1Page {
 
-  constructor(private socialSharing: SocialSharing) {}
+  apps = [
+    { name: 'In App Browser', path: '/in-app-browser' },
+    { name: 'Social Sharing', path: '/social-sharing' }
+  ];
 
-  onClick(){
-    this.socialSharing.share('The message you would like to share');
+  constructor(private router: Router) {}
+
+  navigate(path: string) {
+    this.router.navigateByUrl(path);
   }
+
 }

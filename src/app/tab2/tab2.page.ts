@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-tab2',
@@ -8,9 +7,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 })
 export class Tab2Page {
 
-  constructor(private iab: InAppBrowser) {}
+  constructor() {}
 
-  onClick(){
-    this.iab.create('https://ionicframework.com/').show();
-  }
 }

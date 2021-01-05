@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { SocialSharingPage } from './social-sharing.page';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SocialSharingPage', () => {
   let component: SocialSharingPage;
@@ -10,7 +12,8 @@ describe('SocialSharingPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SocialSharingPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), RouterTestingModule],
+      providers: [SocialSharing]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SocialSharingPage);

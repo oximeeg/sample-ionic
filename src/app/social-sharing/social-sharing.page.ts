@@ -1,5 +1,6 @@
+import { SocialSharing } from 'ionic-native/social-sharing/ngx';
+
 import { Component } from '@angular/core';
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-social-sharing',

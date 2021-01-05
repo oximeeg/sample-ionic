@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
-import { Tab1Page } from './tab1.page';
 import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { Tab1Page } from './tab1.page';
 
 describe('Tab1Page', () => {
   let component: Tab1Page;

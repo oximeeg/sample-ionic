@@ -15,9 +15,7 @@ describe('Tab1Page', () => {
     TestBed.configureTestingModule({
       declarations: [Tab1Page],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule],
-      providers: [
-        { provide: Router, useValue: routerSpy }
-      ]
+      providers: [{ provide: Router, useValue: routerSpy }]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Tab1Page);

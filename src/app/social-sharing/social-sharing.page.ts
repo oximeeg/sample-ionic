@@ -5,11 +5,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-social-sharing',
   templateUrl: './social-sharing.page.html',
-  styleUrls: ['./social-sharing.page.scss'],
+  styleUrls: ['./social-sharing.page.scss']
 })
 export class SocialSharingPage {
-
-  constructor(private socialSharing: SocialSharing) { }
+  constructor(private socialSharing: SocialSharing) {}
 
   onShare() {
     this.socialSharing.share('The message you would like to share');

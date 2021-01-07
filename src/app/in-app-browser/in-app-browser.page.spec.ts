@@ -11,7 +11,7 @@ describe('InAppBrowserPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InAppBrowserPage ],
+      declarations: [InAppBrowserPage],
       imports: [IonicModule.forRoot(), RouterTestingModule],
       providers: [InAppBrowser]
     }).compileComponents();

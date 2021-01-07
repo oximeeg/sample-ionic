@@ -11,7 +11,7 @@ describe('SocialSharingPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SocialSharingPage ],
+      declarations: [SocialSharingPage],
       imports: [IonicModule.forRoot(), RouterTestingModule],
       providers: [SocialSharing]
     }).compileComponents();

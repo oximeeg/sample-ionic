@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
   apps = [
     { name: 'In App Browser', path: '/in-app-browser' },
     { name: 'Social Sharing', path: '/social-sharing' }
@@ -18,5 +17,4 @@ export class Tab1Page {
   navigate(path: string) {
     this.router.navigateByUrl(path);
   }
-
 }

@@ -15,7 +15,7 @@ import { Tab3Page } from './tab3.page';
     FormsModule,
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
-    Tab3PageRoutingModule,
+    Tab3PageRoutingModule
   ],
   declarations: [Tab3Page]
 })

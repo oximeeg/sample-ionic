@@ -7,7 +7,6 @@ import { Platform } from '@ionic/angular';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-
   let statusBarSpy;
   let splashScreenSpy;
   let platformReadySpy;
@@ -25,8 +24,8 @@ describe('AppComponent', () => {
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },
         { provide: SplashScreen, useValue: splashScreenSpy },
-        { provide: Platform, useValue: platformSpy },
-      ],
+        { provide: Platform, useValue: platformSpy }
+      ]
     }).compileComponents();
   }));
 
@@ -45,5 +44,4 @@ describe('AppComponent', () => {
   });
 
   // TODO: add more tests!
-
 });

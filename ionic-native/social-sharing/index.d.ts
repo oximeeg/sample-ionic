@@ -32,6 +32,11 @@ import { IonicNativePlugin } from '@ionic-native/core';
  */
 export declare class SocialSharingOriginal extends IonicNativePlugin {
     /**
+     * close
+     * @returns {Promise<any>}
+     */
+    close(): Promise<any>;
+    /**
      * Shares using the share sheet
      * @param message {string} The message you would like to share.
      * @param subject {string} The subject

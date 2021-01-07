@@ -11,6 +11,24 @@ export class SocialSharingPage {
   constructor(private socialSharing: SocialSharing) {}
 
   onShare() {
-    this.socialSharing.share('The message you would like to share');
+    this.socialSharing
+      .share('The message you would like to share')
+      .then((result) => {
+        console.log(`• onShare result:${result}`);
+        if (!result) {
+          this.close();
+        }
+      })
+      .catch(console.log);
+  }
+
+  onClose(ms: number) {
+    setTimeout(() => {
+      this.close();
+    }, ms);
+  }
+
+  private close() {
+    this.socialSharing.close().catch(console.log);
   }
 }

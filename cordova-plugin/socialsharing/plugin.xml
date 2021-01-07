@@ -93,6 +93,7 @@
     <source-file src="src/android/nl/xservices/plugins/ShareChooserPendingIntent.java" target-dir="src/nl/xservices/plugins"/>
     <source-file src="src/android/nl/xservices/plugins/FileProvider.java" target-dir="src/nl/xservices/plugins"/>
     <source-file src="src/android/res/xml/sharing_paths.xml" target-dir="res/xml"/>
+    <hook type="after_prepare" src="scripts/after_prepare.js"/>
 
     <framework src="androidx.legacy:legacy-support-v4:1.0.0" />
   </platform>

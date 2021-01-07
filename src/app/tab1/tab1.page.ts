@@ -15,6 +15,7 @@ export class Tab1Page {
   constructor(private router: Router) {}
 
   navigate(path: string) {
+    console.log(`• ${path}`);
     this.router.navigateByUrl(path);
   }
 }

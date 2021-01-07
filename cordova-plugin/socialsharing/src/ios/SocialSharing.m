@@ -19,6 +19,36 @@ static NSString *const kShareOptionIPadCoordinates = @"iPadCoordinates";
 }
 
 - (void)pluginInitialize {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(onAppWillResignActive:)
+                                               name:UIApplicationWillResignActiveNotification
+                                             object:nil];
+}
+
+- (void)onAppWillResignActive:(NSNotification*)notification {
+  [self closeWithSuccess:nil failure:nil];
+}
+
+- (void)close:(CDVInvokedUrlCommand*)command {
+  __weak __typeof(self) wSelf = self;
+  [self closeWithSuccess:^{
+    __strong __typeof(wSelf) sSelf = wSelf;
+    CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [sSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  } failure:^{
+    __strong __typeof(wSelf) sSelf = wSelf;
+    CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"not available"];
+    [sSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+  }];
+}
+
+- (void)closeWithSuccess:(void (^ __nullable)(void))success failure:(void (^ __nullable)(void))failure {
+  UIViewController* viewController = [self getTopMostViewController];
+  if ([viewController isKindOfClass:[UIActivityViewController class]]) {
+    [viewController dismissViewControllerAnimated:YES completion:success];
+  } else if (failure) {
+    failure();
+  }
 }
 
 - (void)available:(CDVInvokedUrlCommand*)command {

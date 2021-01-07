@@ -8,6 +8,7 @@
 @property (retain) NSString * tempStoredFile;
 @property (retain) CDVInvokedUrlCommand * command;
 
+- (void)close:(CDVInvokedUrlCommand*)command;
 - (void)available:(CDVInvokedUrlCommand*)command;
 - (void)setIPadPopupCoordinates:(CDVInvokedUrlCommand*)command;
 - (void)share:(CDVInvokedUrlCommand*)command;

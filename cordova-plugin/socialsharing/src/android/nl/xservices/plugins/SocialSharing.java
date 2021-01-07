@@ -1,5 +1,6 @@
 package nl.xservices.plugins;
 
+import io.ionic.starter.MainActivity;
 import nl.xservices.plugins.*;
 
 import android.annotation.SuppressLint;
@@ -42,6 +43,7 @@ import java.util.regex.Pattern;
 
 public class SocialSharing extends CordovaPlugin {
 
+  private static final String ACTION_CLOSE_EVENT = "close";
   private static final String ACTION_AVAILABLE_EVENT = "available";
   private static final String ACTION_SHARE_EVENT = "share";
   private static final String ACTION_SHARE_WITH_OPTIONS_EVENT = "shareWithOptions";
@@ -78,6 +80,10 @@ public class SocialSharing extends CordovaPlugin {
     this._callbackContext = callbackContext; // only used for onActivityResult
     this.pasteMessage = null;
     if (ACTION_AVAILABLE_EVENT.equals(action)) {
+      callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+      return true;
+    } else if (ACTION_CLOSE_EVENT.equals(action)) {
+      close();
       callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
       return true;
     } else if (ACTION_SHARE_EVENT.equals(action)) {
@@ -124,6 +130,13 @@ public class SocialSharing extends CordovaPlugin {
       callbackContext.error("socialSharing." + action + " is not a supported function. Did you mean '" + ACTION_SHARE_EVENT + "'?");
       return false;
     }
+  }
+
+  private void close() {
+    Log.d("•", "close");
+    Intent intent = new Intent(cordova.getActivity(), MainActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    cordova.getActivity().startActivity(intent);
   }
 
   private boolean isEmailAvailable() {

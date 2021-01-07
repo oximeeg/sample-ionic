@@ -1,0 +1,4 @@
+# Ignore
+*.png
+*.svg
+.DS_Store
